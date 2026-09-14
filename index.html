@@ -714,13 +714,13 @@
 
       <div class="tabs-bar">
         <button class="tab-btn active" onclick="setTab('all')" id="tab-all">
-          All Notes <span class="badge-count" id="count-all">20</span>
+          All Notes <span class="badge-count" id="count-all">22</span>
         </button>
         <button class="tab-btn" onclick="setTab('mistakes')" id="tab-mistakes">
           Corrections & Mistakes <span class="badge-count" id="count-mistakes">9</span>
         </button>
         <button class="tab-btn" onclick="setTab('vocab')" id="tab-vocab">
-          New Vocabulary & Idioms <span class="badge-count" id="count-vocab">11</span>
+          New Vocabulary & Idioms <span class="badge-count" id="count-vocab">13</span>
         </button>
         <button class="tab-btn" onclick="setTab('listening')" id="tab-listening">
           🎧 Listening Practice
@@ -1447,6 +1447,84 @@
           </div>
         </article>
 
+        <!-- 12. Emerged -->
+        <article class="card" data-category="vocab" data-keywords="emerged emerge emerso apparso venuto alla luce leader details past verb">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-vocab">Past Verb</span>
+              <span class="tag tag-culture">B2/C1 Expression</span>
+            </div>
+            <button class="audio-btn" onclick="speak('emerged. Emerge, emerged. New details emerged from the investigation.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div style="margin-bottom: 8px;">
+            <div style="font-size: 1.25rem; font-weight: 700; color: var(--text);">
+              emerged <span style="font-size: 0.85rem; font-weight: 500; color: var(--text-muted);">/ɪˈmɜːdʒd/ (emerge &rarr; emerged)</span>
+            </div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Emerso / Apparso / Venuto alla luce / Rivelatosi</strong>
+              <div class="it-note">Used when facts or information become known (<em>"new details emerged"</em>), when someone rises to prominence (<em>"he emerged as the leader"</em>), or when coming through a crisis (<em>"emerged stronger"</em>).</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"After months of confidential talks, an unexpected agreement finally <strong>emerged</strong>."</span>
+                <span class="mini-audio" onclick="speak('After months of confidential talks, an unexpected agreement finally emerged.')">🔊</span>
+              </div>
+              <div class="example-it">Dopo mesi di colloqui riservati, è finalmente emerso un accordo inaspettato.</div>
+            </div>
+            <div class="example-item">
+              <div class="example-en">
+                <span>"He <strong>emerged</strong> as the natural leader during the project crisis."</span>
+                <span class="mini-audio" onclick="speak('He emerged as the natural leader during the project crisis.')">🔊</span>
+              </div>
+              <div class="example-it">È emerso come il leader naturale durante la crisi del progetto.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 13. Immersion -->
+        <article class="card" data-category="vocab" data-keywords="immersion imersion immersione lingua totale language involvement noun">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-vocab">Noun</span>
+              <span class="tag tag-culture">Learning & Lifestyle</span>
+            </div>
+            <button class="audio-btn" onclick="speak('immersion. Total immersion. Language immersion.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div style="margin-bottom: 8px;">
+            <div style="font-size: 1.25rem; font-weight: 700; color: var(--text);">
+              immersion <span style="font-size: 0.85rem; font-weight: 500; color: var(--text-muted);">/ɪˈmɜː.ʃən/</span>
+            </div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Immersione (totale) / Coinvolgimento profondo</strong>
+              <div class="it-note"><strong>Spelling Alert:</strong> Note the double <strong>mm</strong> (i-m-m-e-r-s-i-o-n). Most often used in <em>language immersion</em> (complete exposure without translating) and <em>cultural immersion</em>.</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"The quickest route to fluency is daily language <strong>immersion</strong> through podcasts and speaking."</span>
+                <span class="mini-audio" onclick="speak('The quickest route to fluency is daily language immersion through podcasts and speaking.')">🔊</span>
+              </div>
+              <div class="example-it">La via più rapida verso la padronanza è l'immersione linguistica quotidiana attraverso podcast e conversazione.</div>
+            </div>
+            <div class="example-item">
+              <div class="example-en">
+                <span>"His new international assignment required complete <strong>immersion</strong> in local business customs."</span>
+                <span class="mini-audio" onclick="speak('His new international assignment required complete immersion in local business customs.')">🔊</span>
+              </div>
+              <div class="example-it">Il suo nuovo incarico internazionale ha richiesto una completa immersione negli usi commerciali locali.</div>
+            </div>
+          </div>
+        </article>
+
       </div>
     </section>
 
@@ -1573,7 +1651,7 @@
 
       <div class="fc-controls">
         <button class="fc-btn" onclick="prevCard()">&#8592; Previous</button>
-        <span id="fc-counter" style="font-size: 0.88rem; font-weight: 600; min-width: 60px; text-align: center;">1 / 19</span>
+        <span id="fc-counter" style="font-size: 0.88rem; font-weight: 600; min-width: 60px; text-align: center;">1 / 21</span>
         <button class="fc-btn" onclick="nextCard()">Next &#8594;</button>
         <button class="fc-btn" onclick="speakCurrentCard()" title="Speak aloud">🔊 Pronounce</button>
       </div>
@@ -1724,7 +1802,9 @@
       { cat: "Motto", term: "who dares wins", it: "Chi osa vince", tip: "Famous British motto celebrating courage and bold action." },
       { cat: "Education", term: "scholarship (merit-based)", it: "Borsa di studio per merito", tip: "You win or earn a scholarship based on grades or sports." },
       { cat: "Financial Aid", term: "bursary / grant (need-based)", it: "Sussidio economico / fondo perduto", tip: "Awarded based on financial need, not repayable." },
-      { cat: "Irregular Past", term: "hid the pregnancies", it: "Ha nascosto le gravidanze", tip: "Irregular forms: hide -> hid -> hidden." }
+      { cat: "Irregular Past", term: "hid the pregnancies", it: "Ha nascosto le gravidanze", tip: "Irregular forms: hide -> hid -> hidden." },
+      { cat: "Verb (Past)", term: "emerged", it: "Emerso / apparso / venuto alla luce", tip: "Past form of emerge (/ɪˈmɜːdʒd/). E.g. 'new facts emerged'." },
+      { cat: "Noun", term: "immersion", it: "Immersione (totale)", tip: "Spelling: double 'm' (immersion). E.g. 'language immersion'." }
     ];
 
     let fcIndex = 0;

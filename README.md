@@ -33,6 +33,8 @@ Complete with Italian definitions, register, pronunciation guides, and real-worl
 - **bursary / grant** (need-based – *sussidio economico a fondo perduto*)
 - **first come, first served** (*chi prima arriva meglio alloggia*)
 - **hid the pregnancies** (irregular past: *hide &rarr; hid &rarr; hidden*)
+- **emerged** (past verb: *emerso / apparso / venuto alla luce*)
+- **immersion** (noun: *immersione totale / coinvolgimento profondo*)
 
 ### 3. 🎧 Curated Listening & Real-world Practice
 - **BBC 6 Minute English**: *"Is your job taking over your life?"*
