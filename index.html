@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mauro's English Notes | Preply Lesson Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-subtle: #f1f5f9;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --border-hover: #cbd5e1;
+      --primary: #2563eb;
+      --primary-subtle: #eff6ff;
+      --primary-text: #1d4ed8;
+      --emerald: #059669;
+      --emerald-subtle: #ecfdf5;
+      --rose: #e11d48;
+      --rose-subtle: #fff1f2;
+      --amber: #d97706;
+      --amber-subtle: #fffbeb;
+      --purple: #7c3aed;
+      --purple-subtle: #f5f3ff;
+      --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.06), 0 2px 4px -2px rgba(0,0,0,0.04);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 18px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #090d16;
+      --surface: #111827;
+      --surface-subtle: #1f2937;
+      --text: #f9fafb;
+      --text-muted: #9ca3af;
+      --border: #1f2937;
+      --border-hover: #374151;
+      --primary: #3b82f6;
+      --primary-subtle: #172554;
+      --primary-text: #93c5fd;
+      --emerald: #10b981;
+      --emerald-subtle: #064e3b;
+      --rose: #f43f5e;
+      --rose-subtle: #4c0519;
+      --amber: #f59e0b;
+      --amber-subtle: #451a03;
+      --purple: #a855f7;
+      --purple-subtle: #3b0764;
+      --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.5);
+      --shadow-md: 0 4px 12px 0 rgba(0,0,0,0.4);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      padding-bottom: 80px;
+    }
+
+    /* Container */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Top Navigation Bar */
+    header {
+      padding: 32px 0 24px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 10px rgba(37,99,235,0.25);
+    }
+
+    .header-text h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .header-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 2px;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--surface-subtle);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-btn {
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      color: var(--text);
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+
+    .icon-btn:hover {
+      background: var(--border);
+      transform: translateY(-1px);
+    }
+
+    /* Sub-nav / Controls */
+    .controls-panel {
+      margin: 28px 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .search-box {
+      position: relative;
+      width: 100%;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 12px 16px 12px 42px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    /* Navigation Tabs */
+    .tabs-bar {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+
+    .tabs-bar::-webkit-scrollbar { display: none; }
+
+    .tab-btn {
+      padding: 8px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .tab-btn:hover {
+      background: var(--surface-subtle);
+      color: var(--text);
+    }
+
+    .tab-btn.active {
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+    }
+
+    .badge-count {
+      padding: 1px 6px;
+      border-radius: 99px;
+      font-size: 0.72rem;
+      background: var(--border);
+      color: var(--text);
+    }
+
+    .tab-btn.active .badge-count {
+      background: rgba(255,255,255,0.25);
+      color: #ffffff;
+    }
+
+    /* Section Headers */
+    .section-header {
+      margin: 36px 0 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Card Grid */
+    .cards-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .card:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .card-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .tag-mistake { background: var(--rose-subtle); color: var(--rose); }
+    .tag-correction { background: var(--emerald-subtle); color: var(--emerald); }
+    .tag-vocab { background: var(--primary-subtle); color: var(--primary-text); }
+    .tag-idiom { background: var(--purple-subtle); color: var(--purple); }
+    .tag-culture { background: var(--amber-subtle); color: var(--amber); }
+
+    .audio-btn {
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.88rem;
+      transition: all 0.15s;
+      flex-shrink: 0;
+    }
+
+    .audio-btn:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+      background: var(--primary-subtle);
+    }
+
+    /* Comparison Box for Mistakes */
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    @media (max-width: 640px) {
+      .comparison-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .mistake-box {
+      background: var(--rose-subtle);
+      border-left: 3px solid var(--rose);
+      padding: 10px 12px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .mistake-box .label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .mistake-box .text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: line-through;
+      opacity: 0.85;
+    }
+
+    .correction-box {
+      background: var(--emerald-subtle);
+      border-left: 3px solid var(--emerald);
+      padding: 10px 12px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .correction-box .label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--emerald);
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .correction-box .text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* Italian Meaning */
+    .it-translation {
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .it-flag {
+      font-size: 1rem;
+      line-height: 1.3;
+      flex-shrink: 0;
+    }
+
+    .it-content strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .it-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    /* Example Section */
+    .examples-container {
+      margin-top: 10px;
+    }
+
+    .example-item {
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      background: rgba(148, 163, 184, 0.06);
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+      border-left: 2px solid var(--primary);
+    }
+
+    .example-en {
+      color: var(--text);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .example-it {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+      font-style: italic;
+    }
+
+    .mini-audio {
+      cursor: pointer;
+      opacity: 0.6;
+      transition: opacity 0.15s;
+    }
+
+    .mini-audio:hover { opacity: 1; }
+
+    /* Listening Resource Cards */
+    .listening-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .listening-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .listening-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .listening-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ext-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: var(--primary-subtle);
+      color: var(--primary-text);
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid rgba(37,99,235,0.2);
+      transition: all 0.15s;
+    }
+
+    .ext-link-btn:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .vocab-tags-inline {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .pill-small {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 99px;
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    /* Flashcard Mode Styles */
+    .flashcard-wrapper {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      margin: 24px 0;
+    }
+
+    .fc-card {
+      width: 100%;
+      max-width: 520px;
+      min-height: 280px;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      transition: border-color 0.2s;
+    }
+
+    .fc-card:hover {
+      border-color: var(--primary);
+    }
+
+    .fc-category {
+      position: absolute;
+      top: 18px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    .fc-term {
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .fc-reveal {
+      font-size: 1.1rem;
+      color: var(--primary-text);
+      font-weight: 600;
+      background: var(--primary-subtle);
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      margin-top: 12px;
+      display: none;
+    }
+
+    .fc-reveal.visible { display: block; }
+
+    .fc-hint {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin-top: 16px;
+    }
+
+    .fc-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .fc-btn {
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+
+    .fc-btn:hover {
+      background: var(--surface-subtle);
+      border-color: var(--text-muted);
+    }
+
+    /* Print styling */
+    @media print {
+      body { background: #ffffff; color: #000000; padding: 0; }
+      header { border: none; padding: 10px 0; }
+      .controls-panel, .icon-btn, .audio-btn, .mini-audio, .flashcard-wrapper, .tabs-bar { display: none !important; }
+      .card { border: 1px solid #ddd; break-inside: avoid; margin-bottom: 12px; box-shadow: none; }
+      .it-translation, .mistake-box, .correction-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+
+    /* Empty search message */
+    .empty-state {
+      text-align: center;
+      padding: 48px 20px;
+      color: var(--text-muted);
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header>
+    <div class="container header-content">
+      <div class="brand-group">
+        <div class="brand-badge">M</div>
+        <div class="header-text">
+          <h1>Mauro's English Notes</h1>
+          <div class="header-meta">
+            <span>Preply Lesson Review</span>
+            <span>&bull;</span>
+            <span class="meta-pill">🇮🇹 Italian &rarr; 🇬🇧 English</span>
+            <span>&bull;</span>
+            <span id="current-date">Today's Session</span>
+          </div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" onclick="toggleTheme()" title="Toggle Dark/Light Mode" id="theme-btn" aria-label="Toggle Theme">
+          🌙
+        </button>
+        <button class="icon-btn" onclick="window.print()" title="Print / Save PDF" aria-label="Print Study Notes">
+          🖨️
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Controls (Search & Tab Filters) -->
+    <div class="controls-panel">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input 
+          type="text" 
+          id="search-input" 
+          class="search-input" 
+          placeholder="Search mistakes, vocabulary, Italian translation, or examples..." 
+          oninput="handleSearch()"
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="tabs-bar">
+        <button class="tab-btn active" onclick="setTab('all')" id="tab-all">
+          All Notes <span class="badge-count" id="count-all">20</span>
+        </button>
+        <button class="tab-btn" onclick="setTab('mistakes')" id="tab-mistakes">
+          Corrections & Mistakes <span class="badge-count" id="count-mistakes">9</span>
+        </button>
+        <button class="tab-btn" onclick="setTab('vocab')" id="tab-vocab">
+          New Vocabulary & Idioms <span class="badge-count" id="count-vocab">11</span>
+        </button>
+        <button class="tab-btn" onclick="setTab('listening')" id="tab-listening">
+          🎧 Listening Practice
+        </button>
+        <button class="tab-btn" onclick="setTab('flashcards')" id="tab-flashcards">
+          ⚡ Quick Flashcards
+        </button>
+      </div>
+    </div>
+
+    <!-- Empty Search State -->
+    <div class="empty-state" id="empty-state">
+      <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 4px;">No matching notes found</p>
+      <p style="font-size: 0.9rem;">Try searching for a different English word or Italian term.</p>
+    </div>
+
+    <!-- SECTION 1: MISTAKES & CORRECTIONS -->
+    <section id="section-mistakes">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">
+            <span>🎯</span> Mistakes Made & Corrections
+          </h2>
+          <p class="section-desc">Key points noticed in today's speaking practice with Italian contrastive grammar notes.</p>
+        </div>
+      </div>
+
+      <div class="cards-list" id="mistakes-list">
+
+        <!-- Item 1: Five thirty -->
+        <article class="card" data-category="mistakes" data-keywords="five thirty half past five le cinque e mezza time tempo orario">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-mistake">Mistake Review</span>
+              <span class="tag tag-culture">Telling Time</span>
+            </div>
+            <button class="audio-btn" onclick="speak('five thirty. half past five. The meeting is at five thirty.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div class="comparison-row">
+            <div class="mistake-box">
+              <div class="label">❌ Avoid / What was said</div>
+              <div class="text">"at the five and thirty" / "five and thirty"</div>
+            </div>
+            <div class="correction-box">
+              <div class="label">✅ Natural English</div>
+              <div class="text">five thirty / half past five</div>
+            </div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Le cinque e mezza (17:30 / 05:30)</strong>
+              <div class="it-note">In English we never use an article before time (no "at the"). Use the digital format <strong>five thirty</strong> or the conversational format <strong>half past five</strong>.</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"Our call is scheduled for <strong>five thirty</strong> tomorrow afternoon."</span>
+                <span class="mini-audio" onclick="speak('Our call is scheduled for five thirty tomorrow afternoon.')">🔊</span>
+              </div>
+              <div class="example-it">La nostra chiamata è programmata per le cinque e mezza domani pomeriggio.</div>
+            </div>
+            <div class="example-item">
+              <div class="example-en">
+                <span>"I usually leave the office at <strong>half past five</strong>."</span>
+                <span class="mini-audio" onclick="speak('I usually leave the office at half past five.')">🔊</span>
+              </div>
+              <div class="example-it">Di solito esco dall'ufficio alle cinque e mezza.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 2: Cross the sea -->
+        <article class="card" data-category="mistakes" data-keywords="cross the sea travel overseas abroad ocean mare attraversare il mare estero">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-mistake">Collocation</span>
+              <span class="tag tag-vocab">Travel & Geography</span>
+            </div>
+            <button class="audio-btn" onclick="speak('cross the sea. travel overseas. go abroad.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div class="comparison-row">
+            <div class="mistake-box">
+              <div class="label">❌ Literal Italian habit</div>
+              <div class="text">"cross the sea" (when meaning traveling abroad)</div>
+            </div>
+            <div class="correction-box">
+              <div class="label">✅ Natural Usage</div>
+              <div class="text">cross the sea / travel overseas / go abroad</div>
+            </div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Attraversare il mare / Viaggiare oltreoceano / Andare all'estero</strong>
+              <div class="it-note">"Cross the sea" is literal (e.g., in a boat or ferry). When you mean traveling to another country or expanding international business, native speakers say <strong>go overseas</strong>, <strong>travel abroad</strong>, or <strong>cross the ocean/Atlantic</strong>.</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"He decided to move <strong>overseas</strong> to take his career to the next level."</span>
+                <span class="mini-audio" onclick="speak('He decided to move overseas to take his career to the next level.')">🔊</span>
+              </div>
+              <div class="example-it">Ha deciso di trasferirsi all'estero per far fare un salto di qualità alla sua carriera.</div>
+            </div>
+            <div class="example-item">
+              <div class="example-en">
+                <span>"The ferry took two hours to <strong>cross the sea</strong> to the island."</span>
+                <span class="mini-audio" onclick="speak('The ferry took two hours to cross the sea to the island.')">🔊</span>
+              </div>
+              <div class="example-it">Il traghetto ha impiegato due ore per attraversare il mare fino all'isola.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 3: Football club -->
+        <article class="card" data-category="mistakes" data-keywords="football club team calcio squadra club f.c. soccer">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-correction">Sport Vocab</span>
+              <span class="tag tag-vocab">Collocation</span>
+            </div>
+            <button class="audio-btn" onclick="speak('football club. football team.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div class="comparison-row">
+            <div class="mistake-box">
+              <div class="label">⚠️ Context Difference</div>
+              <div class="text">"football society" / confusing team vs club</div>
+            </div>
+            <div class="correction-box">
+              <div class="label">✅ Natural English</div>
+              <div class="text">football club (FC) / football team</div>
+            </div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Club di calcio / Società calcistica</strong>
+              <div class="it-note">Never say "football society" (false friend from <em>società calcistica</em>). Use <strong>football club</strong> (e.g., AC Milan Football Club) for the organization, and <strong>football team</strong> for the group of 11 players.</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"He manages a prestigious <strong>football club</strong> in Northern Italy."</span>
+                <span class="mini-audio" onclick="speak('He manages a prestigious football club in Northern Italy.')">🔊</span>
+              </div>
+              <div class="example-it">Dirige un prestigioso club di calcio nel nord Italia.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 4: Striker -->
+        <article class="card" data-category="mistakes" data-keywords="striker attacker punta attaccante football positions centravanti forward">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-correction">Sport Terminology</span>
+            </div>
+            <button class="audio-btn" onclick="speak('striker. centre-forward.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div class="comparison-row">
+            <div class="mistake-box">
+              <div class="label">❌ Literal Translation</div>
+              <div class="text">"attacker" / "offensive player"</div>
+            </div>
+            <div class="correction-box">
+              <div class="label">✅ Accurate English Term</div>
+              <div class="text">striker / centre-forward</div>
+            </div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Attaccante / Punta centrale / Centravanti</strong>
+              <div class="it-note">While "attacker" or "forward" is a generic category, the dedicated goal scorer playing upfront is specifically called a <strong>striker</strong>.</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"The team urgently needs a clinical <strong>striker</strong> who can score 20 goals a season."</span>
+                <span class="mini-audio" onclick="speak('The team urgently needs a clinical striker who can score 20 goals a season.')">🔊</span>
+              </div>
+              <div class="example-it">La squadra ha urgente bisogno di un attaccante cinico che possa segnare 20 gol a stagione.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 5: You took it over -->
+        <article class="card" data-category="mistakes" data-keywords="you took it over take over phrasal verb rilevare subentrare controllo">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-mistake">Phrasal Verb</span>
+              <span class="tag tag-vocab">Grammar Rule</span>
+            </div>
+            <button class="audio-btn" onclick="speak('you took it over. Take it over.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div class="comparison-row">
+            <div class="mistake-box">
+              <div class="label">❌ Pronoun Placement Trap</div>
+              <div class="text">"you took over it" / "you take control of it"</div>
+            </div>
+            <div class="correction-box">
+              <div class="label">✅ Correct Separable Order</div>
+              <div class="text">you took it over</div>
+            </div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>L'hai rilevato / Ne hai preso il controllo / gestione</strong>
+              <div class="it-note"><strong>Golden Grammar Rule:</strong> "Take over" is a separable phrasal verb. When the object is a pronoun (<em>it / them</em>), it <strong>must</strong> go in the middle: <em>"You took IT over"</em> (never <em>"took over it"</em>).</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"When the founder stepped down, <strong>you took it over</strong> and doubled revenue."</span>
+                <span class="mini-audio" onclick="speak('When the founder stepped down, you took it over and doubled revenue.')">🔊</span>
+              </div>
+              <div class="example-it">Quando il fondatore si è dimesso, l'hai rilevata e hai raddoppiato il fatturato.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 6: Not so empathetic -->
+        <article class="card" data-category="mistakes" data-keywords="not so empathetic empatico empathy pronuncia spelling sensitive">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-mistake">Pronunciation & Form</span>
+              <span class="tag tag-vocab">Adjective</span>
+            </div>
+            <button class="audio-btn" onclick="speak('not so empathetic. Empathetic.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div class="comparison-row">
+            <div class="mistake-box">
+              <div class="label">❌ Common Pitfalls</div>
+              <div class="text">"not so empatic" / "not sensitive"</div>
+            </div>
+            <div class="correction-box">
+              <div class="label">✅ Standard English Form</div>
+              <div class="text">not so empathetic /ˌem.pəˈθet.ɪk/</div>
+            </div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Non così empatico / Poco empatico</strong>
+              <div class="it-note">Stress the third syllable: <em>em-puh-THET-ik</em>. Be careful not to confuse <strong>empathetic</strong> (capable of understanding others' feelings) with <strong>sensitive</strong> (sensibile / permaloso).</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"His response was logical, but he came across as <strong>not so empathetic</strong>."</span>
+                <span class="mini-audio" onclick="speak('His response was logical, but he came across as not so empathetic.')">🔊</span>
+              </div>
+              <div class="example-it">La sua risposta era logica, ma è sembrato poco empatico.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 7: Worsen -->
+        <article class="card" data-category="mistakes" data-keywords="worsen get worse peggiorare verb verbi comparative">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-correction">Verb Form</span>
+              <span class="tag tag-vocab">Useful Verb</span>
+            </div>
+            <button class="audio-btn" onclick="speak('worsen. get worse. The situation began to worsen.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div class="comparison-row">
+            <div class="mistake-box">
+              <div class="label">❌ Clumsy phrasing</div>
+              <div class="text">"make more bad" / "do it worse"</div>
+            </div>
+            <div class="correction-box">
+              <div class="label">✅ Natural Verbs</div>
+              <div class="text">worsen / get worse</div>
+            </div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Peggiorare / Aggravarsi</strong>
+              <div class="it-note">You can use <strong>worsen</strong> (more formal) or <strong>get worse</strong> (conversational). Example: <em>"Conditions worsened"</em> or <em>"Conditions got worse"</em>.</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"Ignoring the client's complaint will only <strong>worsen</strong> the situation."</span>
+                <span class="mini-audio" onclick="speak('Ignoring the client complaint will only worsen the situation.')">🔊</span>
+              </div>
+              <div class="example-it">Ignorare il reclamo del cliente non farà che peggiorare la situazione.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 8: Much better -->
+        <article class="card" data-category="mistakes" data-keywords="much better more better very better molto meglio comparativo">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-mistake">Common Italian Error</span>
+              <span class="tag tag-vocab">Comparative Rule</span>
+            </div>
+            <button class="audio-btn" onclick="speak('much better. far better. Not more better.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div class="comparison-row">
+            <div class="mistake-box">
+              <div class="label">❌ Classic Trap (Molto Meglio)</div>
+              <div class="text">"more better" / "very better"</div>
+            </div>
+            <div class="correction-box">
+              <div class="label">✅ Correct English</div>
+              <div class="text">much better (or: far better)</div>
+            </div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Molto meglio</strong>
+              <div class="it-note"><strong>Never say "more better"!</strong> Because <em>better</em> is already comparative, you modify it with <strong>much</strong> or <strong>far</strong>, never with "more" or "very".</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"Your explanation today was <strong>much better</strong> and far more concise."</span>
+                <span class="mini-audio" onclick="speak('Your explanation today was much better and far more concise.')">🔊</span>
+              </div>
+              <div class="example-it">La tua spiegazione oggi è stata molto meglio e molto più concisa.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 9: First come, first served -->
+        <article class="card" data-category="mistakes" data-keywords="first come first served serve chi prima arriva meglio alloggia ordine arrivo">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-mistake">Ending -ed</span>
+              <span class="tag tag-idiom">Idiom</span>
+            </div>
+            <button class="audio-btn" onclick="speak('first come, first served.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div class="comparison-row">
+            <div class="mistake-box">
+              <div class="label">❌ Missing ending</div>
+              <div class="text">"first come first serve" (missing the -ed)</div>
+            </div>
+            <div class="correction-box">
+              <div class="label">✅ Proper Idiom</div>
+              <div class="text">first come, first served</div>
+            </div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Chi prima arriva meglio alloggia / In ordine di arrivo</strong>
+              <div class="it-note">Notice the <strong>-ed</strong> at the end of <strong>served</strong>: literally, "the first who comes is the first who is served".</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"Conference seats are allocated on a <strong>first come, first served</strong> basis."</span>
+                <span class="mini-audio" onclick="speak('Conference seats are allocated on a first come, first served basis.')">🔊</span>
+              </div>
+              <div class="example-it">I posti per la conferenza vengono assegnati in ordine di arrivo.</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: NEW VOCABULARY & IDIOMS -->
+    <section id="section-vocab">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">
+            <span>✨</span> New Vocabulary & Idioms
+          </h2>
+          <p class="section-desc">Fresh words and idiomatic expressions from our discussion today.</p>
+        </div>
+      </div>
+
+      <div class="cards-list" id="vocab-list">
+
+        <!-- 1. Unforeseen -->
+        <article class="card" data-category="vocab" data-keywords="unforeseen imprevisto inaspettato circumstances delays adjective">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-vocab">Adjective</span>
+              <span class="tag tag-culture">C1 Advanced</span>
+            </div>
+            <button class="audio-btn" onclick="speak('unforeseen. Due to unforeseen circumstances.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div style="margin-bottom: 8px;">
+            <div style="font-size: 1.25rem; font-weight: 700; color: var(--text);">
+              unforeseen <span style="font-size: 0.85rem; font-weight: 500; color: var(--text-muted);">/ˌʌn.fɔːˈsiːn/</span>
+            </div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Imprevisto / Inaspettato</strong>
+              <div class="it-note">Very frequently used in professional settings: <em>"unforeseen circumstances"</em> (circostanze impreviste) or <em>"unforeseen expenses"</em>.</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"Due to <strong>unforeseen</strong> events, the project deadline had to be extended."</span>
+                <span class="mini-audio" onclick="speak('Due to unforeseen events, the project deadline had to be extended.')">🔊</span>
+              </div>
+              <div class="example-it">A causa di eventi imprevisti, la scadenza del progetto è stata prorogata.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. No balance -->
+        <article class="card" data-category="vocab" data-keywords="no balance squilibrio mancanza equilibrio work life balance lavoro vita">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-vocab">Collocation</span>
+              <span class="tag tag-culture">Lifestyle</span>
+            </div>
+            <button class="audio-btn" onclick="speak('no balance. There is no balance.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div style="margin-bottom: 8px;">
+            <div style="font-size: 1.25rem; font-weight: 700; color: var(--text);">no balance</div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Mancanza di equilibrio / Squilibrio</strong>
+              <div class="it-note">Most often used when talking about work vs. personal life (work-life balance): <em>"He has no balance in his life"</em>.</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"When you work twelve hours every day, there is <strong>no balance</strong>."</span>
+                <span class="mini-audio" onclick="speak('When you work twelve hours every day, there is no balance.')">🔊</span>
+              </div>
+              <div class="example-it">Quando lavori dodici ore al giorno, non c'è alcun equilibrio.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. No loyalty -->
+        <article class="card" data-category="vocab" data-keywords="no loyalty lealta slealta fedelta customer brand company">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-vocab">Collocation</span>
+              <span class="tag tag-culture">Business & Ethics</span>
+            </div>
+            <button class="audio-btn" onclick="speak('no loyalty. They showed no loyalty.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div style="margin-bottom: 8px;">
+            <div style="font-size: 1.25rem; font-weight: 700; color: var(--text);">no loyalty</div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Nessuna lealtà / Slealtà / Mancanza di fedeltà</strong>
+              <div class="it-note">Refers to lack of commitment to employees, an employer, or partners: <em>"to show no loyalty"</em>.</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"Many workers left the company because management showed <strong>no loyalty</strong> to them."</span>
+                <span class="mini-audio" onclick="speak('Many workers left the company because management showed no loyalty to them.')">🔊</span>
+              </div>
+              <div class="example-it">Molti lavoratori hanno lasciato l'azienda perché la direzione non ha mostrato alcuna lealtà verso di loro.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Above and beyond -->
+        <article class="card" data-category="vocab" data-keywords="above and beyond andare oltre fare piu del dovuto impegno extra idiom">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-idiom">Idiom</span>
+              <span class="tag tag-culture">Praise / Excellence</span>
+            </div>
+            <button class="audio-btn" onclick="speak('above and beyond. She went above and beyond.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div style="margin-bottom: 8px;">
+            <div style="font-size: 1.25rem; font-weight: 700; color: var(--text);">above and beyond</div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Oltre le aspettative / Fare molto più del proprio dovere</strong>
+              <div class="it-note">Often used with the verb <em>go</em>: <strong>to go above and beyond</strong> (fare il passo in più, superare ogni aspettativa).</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"He went <strong>above and beyond</strong> to deliver the project ahead of time."</span>
+                <span class="mini-audio" onclick="speak('He went above and beyond to deliver the project ahead of time.')">🔊</span>
+              </div>
+              <div class="example-it">Ha fatto molto più del suo dovere per consegnare il progetto in anticipo.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Don't wear your heart on your sleeve -->
+        <article class="card" data-category="vocab" data-keywords="dont wear your heart on your sleeve non mostrare emozioni libro aperto idiom proverbio">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-idiom">Famous Idiom</span>
+              <span class="tag tag-culture">Emotional Intelligence</span>
+            </div>
+            <button class="audio-btn" onclick="speak('don\'t wear your heart on your sleeve.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div style="margin-bottom: 8px;">
+            <div style="font-size: 1.25rem; font-weight: 700; color: var(--text);">don't wear your heart on your sleeve</div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Non mostrare apertamente le tue emozioni / Non essere un libro aperto</strong>
+              <div class="it-note">Literal meaning: non portare il cuore sulla manica della camicia. Idiomatic meaning: keep your feelings guarded; don't make your emotional vulnerabilities obvious to everyone.</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"In tough negotiations, <strong>don't wear your heart on your sleeve</strong>."</span>
+                <span class="mini-audio" onclick="speak('In tough negotiations, don\'t wear your heart on your sleeve.')">🔊</span>
+              </div>
+              <div class="example-it">Nelle trattative difficili, non mostrare apertamente cosa provi; resta impassibile.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Determined -->
+        <article class="card" data-category="vocab" data-keywords="determined determinato risoluto tenace adjective pronuncia">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-vocab">Adjective</span>
+              <span class="tag tag-culture">Personality</span>
+            </div>
+            <button class="audio-btn" onclick="speak('determined. She is determined to succeed.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div style="margin-bottom: 8px;">
+            <div style="font-size: 1.25rem; font-weight: 700; color: var(--text);">
+              determined <span style="font-size: 0.85rem; font-weight: 500; color: var(--text-muted);">/dɪˈtɜː.mɪnd/</span>
+            </div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Determinato / Risoluto / Tenace</strong>
+              <div class="it-note">Pronunciation check: don't pronounce the "-ed" as an extra syllable ("de-ter-min-ed" ❌); it's two syllables: <em>de-TER-mind</em> ✅.</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"Mauro is extremely <strong>determined</strong> to speak fluent English."</span>
+                <span class="mini-audio" onclick="speak('Mauro is extremely determined to speak fluent English.')">🔊</span>
+              </div>
+              <div class="example-it">Mauro è estremamente determinato a parlare un inglese fluente.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Who dares wins -->
+        <article class="card" data-category="vocab" data-keywords="who dares wins chi osa vince motto proverbio rischio audacia">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-idiom">Motto / Proverb</span>
+              <span class="tag tag-culture">Mindset</span>
+            </div>
+            <button class="audio-btn" onclick="speak('who dares wins.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div style="margin-bottom: 8px;">
+            <div style="font-size: 1.25rem; font-weight: 700; color: var(--text);">who dares wins</div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Chi osa vince / La fortuna aiuta gli audaci</strong>
+              <div class="it-note">Famous motto (originally used by the British Special Air Service - SAS). Encourages boldness and taking courageous calculated risks.</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"It was a risky move to launch the new brand, but <strong>who dares wins</strong>!"</span>
+                <span class="mini-audio" onclick="speak('It was a risky move to launch the new brand, but who dares wins!')">🔊</span>
+              </div>
+              <div class="example-it">È stata una mossa rischiosa lanciare il nuovo marchio, ma chi osa vince!</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Scholarship (merit-based) -->
+        <article class="card" data-category="vocab" data-keywords="scholarship borsa di studio merito win merit academic sports">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-vocab">Noun</span>
+              <span class="tag tag-culture">Education / Merit</span>
+            </div>
+            <button class="audio-btn" onclick="speak('scholarship. You win a scholarship based on merit.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div style="margin-bottom: 8px;">
+            <div style="font-size: 1.25rem; font-weight: 700; color: var(--text);">scholarship <span style="font-size: 0.85rem; font-weight: 500; color: var(--text-muted);">(you win)</span></div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Borsa di studio per merito</strong>
+              <div class="it-note"><strong>Key Distinction:</strong> A <strong>scholarship</strong> is won through merit, outstanding academic grades, or athletic ability. Collocation: <em>"to win / earn a scholarship"</em>.</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"He won a prestigious <strong>scholarship</strong> to study at Cambridge."</span>
+                <span class="mini-audio" onclick="speak('He won a prestigious scholarship to study at Cambridge.')">🔊</span>
+              </div>
+              <div class="example-it">Ha vinto una prestigiosa borsa di studio per merito per studiare a Cambridge.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. Bursary / Grant (need-based) -->
+        <article class="card" data-category="vocab" data-keywords="bursary grant sussidio fondo perduto reddito borsa studio bisogno economico">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-vocab">Noun</span>
+              <span class="tag tag-culture">Financial Aid</span>
+            </div>
+            <button class="audio-btn" onclick="speak('bursary. Grant. A grant is free financial assistance.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div style="margin-bottom: 8px;">
+            <div style="font-size: 1.25rem; font-weight: 700; color: var(--text);">bursary / grant <span style="font-size: 0.85rem; font-weight: 500; color: var(--text-muted);">(free / need-based)</span></div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Sussidio economico / Contributo a fondo perduto / Borsa di studio per reddito</strong>
+              <div class="it-note"><strong>Difference from scholarship:</strong> A <strong>bursary</strong> or <strong>grant</strong> is awarded primarily based on financial need or social criteria to help cover tuition/living costs (non-repayable).</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"Students from low-income families can apply for a state <strong>bursary</strong>."</span>
+                <span class="mini-audio" onclick="speak('Students from low-income families can apply for a state bursary.')">🔊</span>
+              </div>
+              <div class="example-it">Gli studenti provenienti da famiglie a basso reddito possono richiedere un sussidio statale.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. First come, first served (Vocab entry) -->
+        <article class="card" data-category="vocab" data-keywords="first come first served ordine arrivo chi prima arriva prenotazione">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-idiom">Idiom / Phrase</span>
+            </div>
+            <button class="audio-btn" onclick="speak('first come, first served.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div style="margin-bottom: 8px;">
+            <div style="font-size: 1.25rem; font-weight: 700; color: var(--text);">first come, first served</div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Chi prima arriva meglio alloggia / Assegnazione in ordine di arrivo</strong>
+              <div class="it-note">Very common for tickets, hotel deals, limited course registrations, and special business offers.</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"Parking spaces are available on a <strong>first come, first served</strong> basis."</span>
+                <span class="mini-audio" onclick="speak('Parking spaces are available on a first come, first served basis.')">🔊</span>
+              </div>
+              <div class="example-it">I posti auto sono disponibili in ordine di arrivo.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 11. Hid the pregnancies -->
+        <article class="card" data-category="vocab" data-keywords="hid the pregnancies hide gravidanze nascondere maternita workplace past tense">
+          <div class="card-top">
+            <div class="card-tags">
+              <span class="tag tag-vocab">Irregular Past Verb</span>
+              <span class="tag tag-culture">Workplace & Rights</span>
+            </div>
+            <button class="audio-btn" onclick="speak('hid the pregnancies. Hide, hid, hidden.')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div style="margin-bottom: 8px;">
+            <div style="font-size: 1.25rem; font-weight: 700; color: var(--text);">
+              hid the pregnancies <span style="font-size: 0.85rem; font-weight: 500; color: var(--text-muted);">(hide &rarr; hid &rarr; hidden)</span>
+            </div>
+          </div>
+          <div class="it-translation">
+            <span class="it-flag">🇮🇹</span>
+            <div class="it-content">
+              <strong>Ha nascosto le gravidanze / Celare la maternità</strong>
+              <div class="it-note">Remember the irregular verb forms: <strong>hide</strong> (present) &rarr; <strong>hid</strong> (past simple) &rarr; <strong>hidden</strong> (past participle). Plural: <em>pregnancy &rarr; pregnancies</em>.</div>
+            </div>
+          </div>
+          <div class="examples-container">
+            <div class="example-item">
+              <div class="example-en">
+                <span>"Due to strict contract penalties, she <strong>hid her pregnancies</strong> from the agency."</span>
+                <span class="mini-audio" onclick="speak('Due to strict contract penalties, she hid her pregnancies from the agency.')">🔊</span>
+              </div>
+              <div class="example-it">A causa di severe penali contrattuali, ha nascosto le sue gravidanze all'agenzia.</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: LISTENING PRACTICE -->
+    <section id="section-listening">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">
+            <span>🎧</span> Further Listening & Context
+          </h2>
+          <p class="section-desc">Hand-picked audio and podcasts that use the exact vocabulary, idioms, and topics we discussed.</p>
+        </div>
+      </div>
+
+      <!-- Listening Item 1: Work-Life Balance & Job Taking Over -->
+      <div class="listening-card">
+        <div class="listening-title">
+          <span>📻</span> BBC 6 Minute English: "Is your job taking over your life?"
+        </div>
+        <div class="listening-desc">
+          A short, engaging 6-minute conversation by BBC Learning English discussing work-life balance, long working hours, and whether our careers are <em>taking over</em> our personal lives. Perfect for practicing the vocabulary we covered today!
+        </div>
+        <div class="listening-links">
+          <a href="https://www.bbc.co.uk/learningenglish/features/6-minute-english/ep-210708" target="_blank" rel="noopener noreferrer" class="ext-link-btn">
+            <span>▶️</span> Listen on BBC Learning English
+          </a>
+          <a href="https://podcasts.apple.com/podcast/6-minute-english/id262026989" target="_blank" rel="noopener noreferrer" class="ext-link-btn">
+            <span>🍏</span> Apple Podcasts
+          </a>
+        </div>
+        <div class="vocab-tags-inline">
+          <span class="pill-small">Vocab applied: <strong>no balance</strong></span>
+          <span class="pill-small">Phrasal verb: <strong>take over</strong></span>
+          <span class="pill-small">Theme: <strong>employee loyalty</strong></span>
+        </div>
+      </div>
+
+      <!-- Listening Item 2: Idioms In Action -->
+      <div class="listening-card">
+        <div class="listening-title">
+          <span>❤️</span> BBC The English We Speak: "Wear your heart on your sleeve"
+        </div>
+        <div class="listening-desc">
+          Learn how native speakers use the idiom <em>"don't wear your heart on your sleeve"</em> in everyday office banter, social situations, and emotional resilience.
+        </div>
+        <div class="listening-links">
+          <a href="https://www.bbc.co.uk/learningenglish/features/the-english-we-speak/ep-180806" target="_blank" rel="noopener noreferrer" class="ext-link-btn">
+            <span>▶️</span> Listen to BBC Episode
+          </a>
+        </div>
+        <div class="vocab-tags-inline">
+          <span class="pill-small">Idiom: <strong>wear heart on your sleeve</strong></span>
+          <span class="pill-small">Nuance: <strong>not so empathetic</strong></span>
+        </div>
+      </div>
+
+      <!-- Listening Item 3: Grit and Determination -->
+      <div class="listening-card">
+        <div class="listening-title">
+          <span>💪</span> TED Talk: "Grit: The power of passion and perseverance" by Angela Duckworth
+        </div>
+        <div class="listening-desc">
+          One of the most inspiring TED talks ever recorded with clear, articulated English. Angela Duckworth explains why being <em>determined</em> and going <em>above and beyond</em> matters more than talent alone.
+        </div>
+        <div class="listening-links">
+          <a href="https://www.ted.com/talks/angela_lee_duckworth_grit_the_power_of_passion_and_perseverance" target="_blank" rel="noopener noreferrer" class="ext-link-btn">
+            <span>🎬</span> Watch on TED (Subtitles available)
+          </a>
+          <a href="https://www.youtube.com/watch?v=H14bBuluwB8" target="_blank" rel="noopener noreferrer" class="ext-link-btn">
+            <span>▶️</span> Watch on YouTube
+          </a>
+        </div>
+        <div class="vocab-tags-inline">
+          <span class="pill-small">Vocab applied: <strong>determined</strong></span>
+          <span class="pill-small">Motto: <strong>who dares wins</strong></span>
+          <span class="pill-small">Collocation: <strong>above and beyond</strong></span>
+        </div>
+      </div>
+
+      <!-- Listening Item 4: Workplace Rights & Challenges -->
+      <div class="listening-card">
+        <div class="listening-title">
+          <span>⚖️</span> NPR Life Kit / Guardian Audio: Maternity Discrimination & Career Trajectories
+        </div>
+        <div class="listening-desc">
+          An insightful discussion on corporate cultures where workers felt pressured, the history of why women felt compelled to conceal personal lives or pregnancies, and modern workplace protections.
+        </div>
+        <div class="listening-links">
+          <a href="https://www.npr.org/podcasts/510338/life-kit" target="_blank" rel="noopener noreferrer" class="ext-link-btn">
+            <span>🎙️</span> NPR Life Kit: Work & Family
+          </a>
+        </div>
+        <div class="vocab-tags-inline">
+          <span class="pill-small">Phrase applied: <strong>hid the pregnancies</strong></span>
+          <span class="pill-small">Theme: <strong>no balance & loyalty</strong></span>
+          <span class="pill-small">Support: <strong>scholarships & bursaries</strong></span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 4: FLASHCARD INTERACTIVE MODE -->
+    <section id="section-flashcards" class="flashcard-wrapper">
+      <div class="section-header" style="text-align: center; justify-content: center; margin-bottom: 20px;">
+        <div>
+          <h2 class="section-title" style="justify-content: center;">
+            <span>⚡</span> Quick Flashcards Mode
+          </h2>
+          <p class="section-desc">Tap the card to reveal the Italian translation, grammar hint, and example sentence!</p>
+        </div>
+      </div>
+
+      <div class="fc-card" onclick="flipFlashcard()" id="fc-card">
+        <div class="fc-category" id="fc-category">Correction</div>
+        <div class="fc-term" id="fc-term">much better</div>
+        <div class="fc-reveal" id="fc-reveal">
+          <div>🇮🇹 <strong>Molto meglio</strong></div>
+          <div style="font-size: 0.85rem; font-weight: 400; margin-top: 4px; color: var(--text-muted);">
+            Never say "more better". Use much/far better!
+          </div>
+        </div>
+        <div class="fc-hint" id="fc-hint">👆 Tap card to reveal translation</div>
+      </div>
+
+      <div class="fc-controls">
+        <button class="fc-btn" onclick="prevCard()">&#8592; Previous</button>
+        <span id="fc-counter" style="font-size: 0.88rem; font-weight: 600; min-width: 60px; text-align: center;">1 / 19</span>
+        <button class="fc-btn" onclick="nextCard()">Next &#8594;</button>
+        <button class="fc-btn" onclick="speakCurrentCard()" title="Speak aloud">🔊 Pronounce</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Audio Speech Synthesis
+    function speak(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel(); // Stop any previous speech
+        const cleanText = text.replace(/<[^>]*>?/gm, '');
+        const utterance = new SpeechSynthesisUtterance(cleanText);
+        utterance.lang = 'en-GB'; // British English default
+        utterance.rate = 0.92; // Slightly paced for learner clarity
+        
+        // Try to pick a natural English voice if available
+        const voices = window.speechSynthesis.getVoices();
+        const englishVoice = voices.find(v => v.lang.startsWith('en-GB') || v.lang.startsWith('en-US'));
+        if (englishVoice) {
+          utterance.voice = englishVoice;
+        }
+        
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert("Speech synthesis is not supported on this browser.");
+      }
+    }
+
+    // Set today's date in local formatted style
+    document.addEventListener('DOMContentLoaded', () => {
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const today = new Date().toLocaleDateString('en-GB', options);
+      const dateEl = document.getElementById('current-date');
+      if (dateEl) {
+        dateEl.textContent = today;
+      }
+      initFlashcards();
+    });
+
+    // Theme Toggle (Dark / Light)
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('mauro_theme', newTheme);
+      document.getElementById('theme-btn').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    }
+
+    // Load saved theme preference
+    const savedTheme = localStorage.getItem('mauro_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('theme-btn').textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    });
+
+    // Navigation Tabs Filter
+    function setTab(tabName) {
+      const tabs = ['all', 'mistakes', 'vocab', 'listening', 'flashcards'];
+      tabs.forEach(t => {
+        const btn = document.getElementById('tab-' + t);
+        if (btn) btn.classList.remove('active');
+      });
+
+      const activeBtn = document.getElementById('tab-' + tabName);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const mistakesSec = document.getElementById('section-mistakes');
+      const vocabSec = document.getElementById('section-vocab');
+      const listeningSec = document.getElementById('section-listening');
+      const flashcardSec = document.getElementById('section-flashcards');
+
+      if (tabName === 'all') {
+        mistakesSec.style.display = 'block';
+        vocabSec.style.display = 'block';
+        listeningSec.style.display = 'block';
+        flashcardSec.style.display = 'none';
+      } else if (tabName === 'mistakes') {
+        mistakesSec.style.display = 'block';
+        vocabSec.style.display = 'none';
+        listeningSec.style.display = 'none';
+        flashcardSec.style.display = 'none';
+      } else if (tabName === 'vocab') {
+        mistakesSec.style.display = 'none';
+        vocabSec.style.display = 'block';
+        listeningSec.style.display = 'none';
+        flashcardSec.style.display = 'none';
+      } else if (tabName === 'listening') {
+        mistakesSec.style.display = 'none';
+        vocabSec.style.display = 'none';
+        listeningSec.style.display = 'block';
+        flashcardSec.style.display = 'none';
+      } else if (tabName === 'flashcards') {
+        mistakesSec.style.display = 'none';
+        vocabSec.style.display = 'none';
+        listeningSec.style.display = 'none';
+        flashcardSec.style.display = 'flex';
+      }
+    }
+
+    // Real-time Search Filter
+    function handleSearch() {
+      const query = document.getElementById('search-input').value.toLowerCase().trim();
+      const allCards = document.querySelectorAll('.card');
+      let visibleCount = 0;
+
+      allCards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+        const matches = text.includes(query) || keywords.includes(query);
+
+        if (matches) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Handle empty state
+      const emptyState = document.getElementById('empty-state');
+      if (visibleCount === 0 && query.length > 0) {
+        emptyState.style.display = 'block';
+      } else {
+        emptyState.style.display = 'none';
+      }
+    }
+
+    // Flashcard Data & Logic
+    const flashcardsData = [
+      { cat: "Correction", term: "five thirty / half past five", it: "Le cinque e mezza (17:30)", tip: "No 'at the'. Say 'at five thirty' or 'at half past five'." },
+      { cat: "Collocation", term: "travel overseas / cross the sea", it: "Viaggiare oltreoceano / attraversare il mare", tip: "For international business, say 'travel overseas' or 'go abroad'." },
+      { cat: "Sport Term", term: "football club", it: "Club di calcio / società calcistica", tip: "Abbreviated as FC. Never say 'football society'." },
+      { cat: "Sport Term", term: "striker", it: "Attaccante / prima punta", tip: "Specifically the main goal-scoring forward upfront." },
+      { cat: "Phrasal Verb", term: "you took it over", it: "L'hai rilevato / ne hai preso il controllo", tip: "Pronoun rule: 'it' goes in the middle! 'took IT over'." },
+      { cat: "Adjective", term: "not so empathetic", it: "Non così empatico / poco empatico", tip: "Pronounced /ˌem.pəˈθet.ɪk/ with stress on 'thet'." },
+      { cat: "Verb", term: "worsen / get worse", it: "Peggiorare", tip: "Avoid clumsy 'make more bad'. Say 'the situation worsened'." },
+      { cat: "Grammar Trap", term: "much better", it: "Molto meglio", tip: "Never 'more better'! Use 'much better' or 'far better'." },
+      { cat: "Idiom", term: "first come, first served", it: "Chi prima arriva meglio alloggia", tip: "Don't forget the -ed at the end of served!" },
+      { cat: "Vocabulary", term: "unforeseen", it: "Imprevisto / inaspettato", tip: "Common: 'due to unforeseen circumstances'." },
+      { cat: "Vocabulary", term: "no balance", it: "Mancanza di equilibrio / squilibrio", tip: "Frequent in work-life balance discussions." },
+      { cat: "Vocabulary", term: "no loyalty", it: "Nessuna lealtà / slealtà", tip: "A lack of allegiance between employer and staff." },
+      { cat: "Idiom", term: "above and beyond", it: "Oltre le aspettative / più del dovuto", tip: "To go above and beyond the call of duty." },
+      { cat: "Idiom", term: "don't wear your heart on your sleeve", it: "Non mostrare apertamente i tuoi sentimenti", tip: "Don't let everyone see your inner emotions easily." },
+      { cat: "Vocabulary", term: "determined", it: "Determinato / risoluto", tip: "Pronounced 'de-TER-mind' (2 syllables)." },
+      { cat: "Motto", term: "who dares wins", it: "Chi osa vince", tip: "Famous British motto celebrating courage and bold action." },
+      { cat: "Education", term: "scholarship (merit-based)", it: "Borsa di studio per merito", tip: "You win or earn a scholarship based on grades or sports." },
+      { cat: "Financial Aid", term: "bursary / grant (need-based)", it: "Sussidio economico / fondo perduto", tip: "Awarded based on financial need, not repayable." },
+      { cat: "Irregular Past", term: "hid the pregnancies", it: "Ha nascosto le gravidanze", tip: "Irregular forms: hide -> hid -> hidden." }
+    ];
+
+    let fcIndex = 0;
+    let fcFlipped = false;
+
+    function initFlashcards() {
+      renderFlashcard();
+    }
+
+    function renderFlashcard() {
+      const item = flashcardsData[fcIndex];
+      fcFlipped = false;
+      document.getElementById('fc-category').textContent = item.cat;
+      document.getElementById('fc-term').textContent = item.term;
+      
+      const revealEl = document.getElementById('fc-reveal');
+      revealEl.classList.remove('visible');
+      revealEl.innerHTML = `
+        <div>🇮🇹 <strong>${item.it}</strong></div>
+        <div style="font-size: 0.85rem; font-weight: 400; margin-top: 4px; color: var(--text-muted);">
+          ${item.tip}
+        </div>
+      `;
+
+      document.getElementById('fc-hint').textContent = "👆 Tap card to reveal Italian translation";
+      document.getElementById('fc-counter').textContent = `${fcIndex + 1} / ${flashcardsData.length}`;
+    }
+
+    function flipFlashcard() {
+      const revealEl = document.getElementById('fc-reveal');
+      const hintEl = document.getElementById('fc-hint');
+      fcFlipped = !fcFlipped;
+      if (fcFlipped) {
+        revealEl.classList.add('visible');
+        hintEl.textContent = "👆 Tap to hide";
+      } else {
+        revealEl.classList.remove('visible');
+        hintEl.textContent = "👆 Tap card to reveal Italian translation";
+      }
+    }
+
+    function nextCard() {
+      fcIndex = (fcIndex + 1) % flashcardsData.length;
+      renderFlashcard();
+    }
+
+    function prevCard() {
+      fcIndex = (fcIndex - 1 + flashcardsData.length) % flashcardsData.length;
+      renderFlashcard();
+    }
+
+    function speakCurrentCard() {
+      const item = flashcardsData[fcIndex];
+      speak(item.term);
+    }
+  </script>
+</body>
+</html>
